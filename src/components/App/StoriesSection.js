@@ -23,7 +23,7 @@ function StoriesSection() {
                   {stories[0]?.title}
                 </h1>
                 <p class="leading-relaxed mb-3">{stories[0]?.author}</p>
-                <a class="text-first inline-flex items-center" href={`/story/${stories[0]?._id}`}>
+                <a class="text-first inline-flex items-center" href={`/#/story/${stories[0]?._id}`}>
                   Learn More
                   <svg
                     class="w-4 h-4 ml-2"
@@ -80,7 +80,7 @@ function StoriesSection() {
                   {stories[1]?.title}
                 </h1>
                 <p class="leading-relaxed mb-3">{stories[1]?.author}</p>
-                <a class="text-first inline-flex items-center" href={`/story/${stories[1]?._id}`}>
+                <a class="text-first inline-flex items-center" href={`/#/story/${stories[1]?._id}`}>
                   Learn More
                   <svg
                     class="w-4 h-4 ml-2"
@@ -137,7 +137,7 @@ function StoriesSection() {
                   {stories[2]?.title}
                 </h1>
                 <p class="leading-relaxed mb-3">{stories[2]?.author}</p>
-                <a class="text-first inline-flex items-center" href={`/story/${stories[2]?._id}`}>
+                <a class="text-first inline-flex items-center" href={`/#/story/${stories[2]?._id}`}>
                   Learn More
                   <svg
                     class="w-4 h-4 ml-2"

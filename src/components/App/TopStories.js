@@ -16,7 +16,7 @@ export default function TopStories(props) {
               {story?.title}
             </h1>
             <p class="leading-relaxed mb-3">{story?.author}</p>
-            <a href={`/story/${story?._id}`}class="text-first inline-flex items-center">
+            <a href={`/#/story/${story?._id}`}class="text-first inline-flex items-center">
               Learn More
               <svg
                 class="w-4 h-4 ml-2"
