@@ -88,8 +88,8 @@ const Login = () => {
                   class="text-center"
                   style={{ color: msg.error ? "red" : "green" }}
                 >
-                  {msg.message}
-                  {!msg.error ? <Redirect to="/profile" /> : null}
+                  {msg.message}{" "}
+                  {msg.message & !msg.error ? <Redirect to="/profile" /> : null}
                 </p>
 
                 <div className="p-2 w-full">

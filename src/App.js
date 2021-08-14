@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import Landing from "./pages/Landing";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter as BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
@@ -10,7 +10,9 @@ import Prof from "./components/App/Prof";
 import Stories from "./components/App/Stories";
 import ChatApp from "./components/App/ChatApp";
 import Profile from "./components/App/Profile";
-
+import NewPost from "./pages/NewPost";
+import Nav from "./components/Nav";
+import SingleStory from './pages/SingleStory'
 function App() {
   const [user, setUser] = useState();
   if (cookie.load("userToken")) {
@@ -43,9 +45,14 @@ function App() {
           <Route path="/stories" exact component={Stories} />
           <Route path="/talk" exact component={ChatApp} />
           {/* <Route path="/profile" exact component={Profile} /> */}
-          <Route to="/profile">
+          <Route path="/profile">
             <Profile user={() => user} />
           </Route>
+          <Route path="/newpost">
+            <NewPost user={() => user} />
+          </Route>
+          <Route path="/story/:id">
+          <SingleStory /></Route>
         </Switch>
       </BrowserRouter>
     </div>

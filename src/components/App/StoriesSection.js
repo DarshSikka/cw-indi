@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function StoriesSection() {
+  const [stories, setStories] = React.useState([]);
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_API_KEY}/posts/all`)
+      .then((resp) => resp.json())
+      .then((res) => {
+        setStories(res);
+      });
+  });
   return (
     <div>
       <section class="text-gray-600 body-font">
@@ -12,13 +20,10 @@ function StoriesSection() {
                   13 Aug 2021
                 </h2>
                 <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">
-                  Raclette Blueberry Nextious Level
+                  {stories[0]?.title}
                 </h1>
-                <p class="leading-relaxed mb-3">
-                  Photo booth fam kinfolk cold-pressed sriracha leggings
-                  jianbing microdosing tousled waistcoat.
-                </p>
-                <a class="text-first inline-flex items-center">
+                <p class="leading-relaxed mb-3">{stories[0]?.author}</p>
+                <a class="text-first inline-flex items-center" href={`/story/${stories[0]?._id}`}>
                   Learn More
                   <svg
                     class="w-4 h-4 ml-2"
@@ -47,7 +52,7 @@ function StoriesSection() {
                       <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                       <circle cx="12" cy="12" r="3"></circle>
                     </svg>
-                    1.2K
+                    {stories[0]?.likes}
                   </span>
                   <span class="text-gray-400 inline-flex items-center leading-none text-sm">
                     <svg
@@ -72,13 +77,10 @@ function StoriesSection() {
                   13 Aug 2021
                 </h2>
                 <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">
-                  Ennui Snackwave Thundercats
+                  {stories[1]?.title}
                 </h1>
-                <p class="leading-relaxed mb-3">
-                  Photo booth fam kinfolk cold-pressed sriracha leggings
-                  jianbing microdosing tousled waistcoat.
-                </p>
-                <a class="text-first inline-flex items-center">
+                <p class="leading-relaxed mb-3">{stories[1]?.author}</p>
+                <a class="text-first inline-flex items-center" href={`/story/${stories[1]?._id}`}>
                   Learn More
                   <svg
                     class="w-4 h-4 ml-2"
@@ -107,7 +109,7 @@ function StoriesSection() {
                       <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                       <circle cx="12" cy="12" r="3"></circle>
                     </svg>
-                    1.2K
+                    {stories[1]?.likes}
                   </span>
                   <span class="text-gray-400 inline-flex items-center leading-none text-sm">
                     <svg
@@ -132,13 +134,10 @@ function StoriesSection() {
                   13 Aug 2021
                 </h2>
                 <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">
-                  Selvage Poke Waistcoat Godard
+                  {stories[2]?.title}
                 </h1>
-                <p class="leading-relaxed mb-3">
-                  Photo booth fam kinfolk cold-pressed sriracha leggings
-                  jianbing microdosing tousled waistcoat.
-                </p>
-                <a class="text-first inline-flex items-center">
+                <p class="leading-relaxed mb-3">{stories[2]?.author}</p>
+                <a class="text-first inline-flex items-center" href={`/story/${stories[2]?._id}`}>
                   Learn More
                   <svg
                     class="w-4 h-4 ml-2"
@@ -167,7 +166,7 @@ function StoriesSection() {
                       <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                       <circle cx="12" cy="12" r="3"></circle>
                     </svg>
-                    1.2K
+                    {stories[2]?.likes}
                   </span>
                   <span class="text-gray-400 inline-flex items-center leading-none text-sm">
                     <svg
